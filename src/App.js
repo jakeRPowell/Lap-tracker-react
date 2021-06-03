@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <a href="https://github.com/jakeRPowell/lap-tracker-react.git" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       <Form 
         runners={runners} 
         setRunners={setRunners}
