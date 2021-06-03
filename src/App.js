@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
 
+import Form from './components/form/Form'
+
+import Clock from './components/Clock/Clock'
+import formattedTime from './components/Clock/clockWork'
+
+import Table from './components/table/Table'
+
 function App() {
+  
+  const [runners, setRunners] = useState([])
+  const [timeElapsed, updateTimeElapsed] = useState('00.00.00')
+  
+  
+  let raceInterval
+
+  const startRaceHandler = () => {
+    raceInterval = setInterval(() => {
+      updateTimeElapsed(formattedTime()) 
+    }, 100);
+  }
+
+  const endRaceHandler = () => {
+    clearInterval(raceInterval)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form 
+        runners={runners} 
+        setRunners={setRunners}
+        startRace={startRaceHandler} 
+        endRace={endRaceHandler} 
+      />
+      <Clock timeElapsed={timeElapsed} />
+      <Table 
+        runners={runners} 
+        setRunners={setRunners} 
+      />
     </div>
   );
 }
