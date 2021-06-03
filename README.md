@@ -1,4 +1,4 @@
-Add runners
-start race
-complete laps
-get stats!
+-Add runners
+-start race
+-complete laps
+-get stats!
