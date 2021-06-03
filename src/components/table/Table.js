@@ -2,15 +2,17 @@ import React from 'react'
 
 import TableRow from './TableRow'
 
-const Table = ({runners, setRunners}) => {
+const Table = ({timeElapsed, runners, setRunners}) => {
 
     const runnersRows = runners.map(el => {
         return (
             <TableRow 
+                timeElapsed={timeElapsed}
                 runners={runners}
                 setRunners={setRunners}
                 name={el.name}
-                laps={el.laps}
+                lapCount={el.lapCount}
+                lapTimes={el.lapTimes}
                 average={el.average}
                 total={el.total}
                 last={el.last}
@@ -26,9 +28,9 @@ const Table = ({runners, setRunners}) => {
             <tbody>
                 <tr>
                     <th>Name</th>
-                    <th>Laps</th>
+                    <th>Number of laps</th>
                     <th>Average</th>
-                    <th>Total Time</th>
+                    <th>Total time</th>
                     <th>Last</th>
                 </tr>    
                 {runnersRows}   

@@ -20,9 +20,10 @@ function App() {
     raceInterval = setInterval(() => {
       updateTimeElapsed(formattedTime()) 
     }, 100);
+    return raceInterval
   }
 
-  const endRaceHandler = () => {
+  const endRaceHandler = (raceInterval) => {
     clearInterval(raceInterval)
   }
 
@@ -36,6 +37,7 @@ function App() {
       />
       <Clock timeElapsed={timeElapsed} />
       <Table 
+        timeElapsed={timeElapsed}
         runners={runners} 
         setRunners={setRunners} 
       />

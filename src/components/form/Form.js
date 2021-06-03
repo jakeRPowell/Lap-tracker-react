@@ -24,7 +24,8 @@ const Form = ({
         }
         const runner = {
             name: runnerName,
-            laps: 0,
+            lapCount: 0,
+            lapTimes: [],
             average: 0,
             total: 0,
             last: 0,

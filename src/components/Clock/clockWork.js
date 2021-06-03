@@ -1,5 +1,5 @@
 
-let timeBegan = null, stoppedDuration = 0
+let timeBegan = null
 
 
 const formattedTime = () => {
@@ -9,7 +9,7 @@ const formattedTime = () => {
     }
     
     let currentTime = new Date()
-    , timeElapsed = new Date(currentTime - timeBegan - stoppedDuration)
+    , timeElapsed = new Date(currentTime - timeBegan)
     , hour = timeElapsed.getUTCHours()
     , min = timeElapsed.getUTCMinutes()
     , sec = timeElapsed.getUTCSeconds()
