@@ -24,7 +24,7 @@ const calculateAverage = (lapTimes) => {
 
 const formatMS = (ms) => {
     
-    let milliseconds = parseInt((ms%1000)/100)
+    let milliseconds = parseInt((ms%10000)/100)
         , seconds = parseInt((ms/1000)%60)
         , minutes = parseInt((ms/(1000*60))%60)
         , hours = parseInt((ms/(1000*60*60))%24);

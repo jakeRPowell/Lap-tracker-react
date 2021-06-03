@@ -15,6 +15,12 @@ const Form = ({
         
     }
 
+    const checkKey = (key) => {
+        if (key === 'Enter') {
+            addRunnerHandler()  
+        }
+    } 
+
     const addRunnerHandler = () => {
         let runnerName;
         if (inputValue === "") {
@@ -40,7 +46,7 @@ const Form = ({
 
     return (        
         <div className="form-controls">
-            <input onChange={(e) => inputHandler(e)} value={inputValue}></input>
+            <input onChange={(e) => inputHandler(e)} onKeyUp={(e) => {checkKey(e.key)}} value={inputValue}></input>
             <Button 
                 buttonType='add' 
                 buttonFunction={() => {addRunnerHandler()}}>

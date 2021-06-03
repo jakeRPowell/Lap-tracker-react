@@ -19,7 +19,7 @@ function App() {
   const startRaceHandler = () => {
     raceInterval = setInterval(() => {
       updateTimeElapsed(formattedTime()) 
-    }, 100);
+    }, 10);
     return raceInterval
   }
 

@@ -24,7 +24,6 @@ const TableRow = ({
         let newLastLap = getLastLap(newLapTimes)
         let updatedRunner = {
             ...runner,
-            //add new lap to lapTimes
             lapTimes: newLapTimes,
             lapCount: lapTimes.length + 1,
             average: formatMS(newAverage),
